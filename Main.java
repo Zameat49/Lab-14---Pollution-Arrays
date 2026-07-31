@@ -30,7 +30,7 @@ class Main
 {
 	//CONSTANTS SECTION
 
-  public static void main(String[] args) 
+  public static void main(String[] args)
   {
 		// DECLARATION SECTION
     double[] co2Levels = {371.32, 373.45, 375.98, 377.70, 379.98, 382.09, 384.03, 385.83, 387.64, 390.10, 391.85, 394.06, 396.74, 398.87, 401.01, 404.41, 406.76, 408.72, 411.66, 414.24};
@@ -45,19 +45,23 @@ class Main
 
 		// INITIALIZATION SECTION
 
-		// INPUT SECTION 
+		// INPUT SECTION
 
 		// PROCESSING SECTION
     double difference = co2Levels[co2Levels.length - 1]  - co2Levels[0];
 		// OUTPUT SECTION
-    printGraph(co2Levels, years);
-    //Explanation of oil drum units
-    System.out.println("\nData displayed for each year begins at 360 ppm.\nEach additional oil drum (🛢 ) represents an additional 10 ppm.\n");
 
+    //Explanation of oil drum units
+    System.out.print("Year");
+    UtilityBelt.printCentered(55, "CO2 in Atmosphere (ppm)");
+    printGraph(co2Levels, years);
     //Column titles of graph
     System.out.print("Year");
-    UtilityBelt.printCentered(55,"CO₂ in Atmosphere (ppm)");
+    UtilityBelt.printCentered(55, "CO2 in Atmosphere (ppm)");
 
+    System.out.println("\nData displayed for each year begins at 360 ppm.\nEach additional oil drum (🛢) represents an additional 10 ppm.\n");
+
+    System.out.printf("From 2001 to 2020, the average atmospheric CO2 levels across the globe has grown %.2f ppm.%n", difference);
   }
   public static void printBar(double co2Amount)
   {
